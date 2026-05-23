@@ -1,0 +1,68 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body { @apply font-sans bg-[#f5f2ef] text-texto antialiased; }
+}
+
+@layer components {
+  .fi {
+    @apply w-full border-0 border-b border-borda bg-transparent
+           py-2 px-1 font-sans text-sm text-texto outline-none
+           transition-colors focus:border-rosa;
+  }
+  .fi-sel {
+    @apply w-full border-0 border-b border-borda bg-transparent
+           py-2 px-1 font-sans text-sm text-texto outline-none
+           cursor-pointer transition-colors focus:border-rosa;
+  }
+  .fi-ta {
+    @apply w-full border border-borda rounded-xl bg-transparent
+           p-3 mt-1 font-sans text-sm text-texto outline-none resize-y
+           min-h-[68px] transition-colors focus:border-rosa;
+  }
+  .field-label {
+    @apply text-[10px] tracking-[1.5px] uppercase text-cinza;
+  }
+  .card {
+    @apply bg-white rounded-2xl border border-borda/60 p-6 mb-4;
+  }
+  .card-title {
+    @apply flex items-center gap-2 text-[10px] tracking-[3px] uppercase
+           text-verde-c font-medium mb-5 pb-3 border-b border-borda/60;
+  }
+  .card-title-rosa {
+    @apply flex items-center gap-2 text-[10px] tracking-[3px] uppercase
+           text-rosa font-medium mb-5 pb-3 border-b border-borda/60;
+  }
+  .prod-card {
+    @apply border border-borda/60 rounded-xl p-5 mb-3 bg-[#faf9f7] last:mb-0;
+  }
+  .btn-verde {
+    @apply inline-flex items-center gap-2 px-6 py-2.5 rounded-full
+           bg-verde text-white text-[11px] tracking-widest uppercase
+           hover:bg-verde-m transition-colors disabled:opacity-50;
+  }
+  .btn-rosa {
+    @apply inline-flex items-center gap-2 px-6 py-2.5 rounded-full
+           bg-rosa text-white text-[11px] tracking-widest uppercase
+           hover:bg-rosa-e transition-colors disabled:opacity-50;
+  }
+  .btn-out {
+    @apply inline-flex items-center gap-2 px-6 py-2.5 rounded-full border border-borda
+           bg-white text-verde text-[11px] tracking-widest uppercase
+           hover:bg-verde-p transition-colors;
+  }
+  .btn-out-rosa {
+    @apply inline-flex items-center gap-2 px-6 py-2.5 rounded-full border border-rosa-c
+           bg-white text-rosa-e text-[11px] tracking-widest uppercase
+           hover:bg-rosa-p transition-colors;
+  }
+}
+
+@media print {
+  .no-print { display: none !important; }
+  body { background: white !important; }
+  .card { break-inside: avoid; }
+}
